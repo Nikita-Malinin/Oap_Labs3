@@ -4,39 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab4_4
-{
+namespace Lab2
+{ 
     class Program
-    {
+    {  
         static void Main(string[] args)
         {
-            while(true)
-            {
-                Console.Write("input Nomer: ");
-                string InputNomer = Console.ReadLine();
-                if (InputNomer.Length == 0)
-                    break;
-                char[] GosNomerSib = { 'A', 'B', 'C', 'E', 'H', 'K', 'M', 'O', 'P', 'T', 'X', 'Y' };
-                if (InputNomer.Length==6)
-                {
-                    var ValidNumber = true;
-                    for (int i=0; i<6 & ValidNumber; i++)
-                    {
-                        if (i == 1 | i == 2 | i == 3)
-                            ValidNumber &= Char.IsDigit(InputNomer[i]);
-                        else ValidNumber &= (InputNomer[i].ToString().IndexOfAny(GosNomerSib) >= 0);
-
-                    }
-                    Console.Write(ValidNumber ? "номер правильный\n" : "номер неправильный\n");
-                }
-               else
-                {
-                    Console.Write("не правильно\n");
-                    Console.Write("\nPress ENTER to countinue...");
-                    Console.ReadLine();
-                }
-            }
-            
+            Console.Write("Input katet1: ");
+            var katet1 = Console.ReadLine();
+            Console.Write("Input katet2: ");
+            var katet2 = Console.ReadLine();
+            var Gipotenuza = Math.Sqrt(Math.Pow(Convert.ToDouble(katet1), 2) + Math.Pow(Convert.ToDouble(katet2), 2));
+            var Perimetr = Convert.ToDouble(katet1) + Convert.ToDouble(katet2) + Convert.ToDouble(Gipotenuza);
+            var Ploshad = (Convert.ToDouble(katet1) * Convert.ToDouble(katet2)) / 2;
+            Console.WriteLine($"Perimetr={Perimetr}");
+            Console.WriteLine($"Ploshad={Ploshad}");
+            Console.Write("Press ENTER to continue...");
+            Console.ReadLine();
         }
-    }
-}
+}   }
+
+           
